@@ -4,14 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuizComponent } from './components/Quizz/quiz.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatButtonModule,
     BrowserAnimationsModule
   ],
   providers: [],

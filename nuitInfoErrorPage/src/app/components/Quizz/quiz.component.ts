@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ScoreService} from '../../service/score.service';
 
 @Component({
   selector: 'app-quizz',
@@ -9,23 +10,14 @@ export class QuizComponent implements OnInit {
   @Input() question: Question = {
     question: 'Comment est votre blanquette ?',
     answers: [
-      {
-        text: 'Elle est très bonne merci',
-        valid: true
-      },
-      {
-        text: 'Ma quoi ?'
-      },
-      {
-        text: 'Trop chère.'
-      },
-      {
-        text: 'Froide.'
-      }
+      {text: 'La blanquette est bonne', valid: true},
+      {text: 'Ma quoi ?'},
+      {text: 'Trop chère.'},
+      {text: 'Froide.'}
     ]
   };
 
-  constructor() {
+  constructor(private scoreService: ScoreService) {
   }
 
   verify(valid?: boolean) {
@@ -33,6 +25,7 @@ export class QuizComponent implements OnInit {
   }
 
   correctAnswer() {
+    this.scoreService.incrementScore();
     console.log('correctAnswer');
   }
 

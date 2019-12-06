@@ -9,17 +9,6 @@ import { from } from 'rxjs';
 })
 export class AppComponent {
 
-  scoreCount: Number
 
-  constructor(private scoreService: ScoreService){
-    this.scoreCount = this.scoreService.getScore()
-  }
-
-  increment(){
-    this.scoreCount = this.scoreService.incrementScore()
-  }
-
-  title = 'nuitInfoErrorPage';
-
-
+  constructor(private scoreService: ScoreService) {}
 }
